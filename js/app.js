@@ -60,7 +60,7 @@ $(function() {
 	$window.bind('mousewheel DOMMouseScroll wheel MozMousePixelScroll', function(e){
 
 		// prevent default mousewheel behavior
-		e.preventDefault();
+		e.preventDefault()
 		e.stopPropagation();
 
 		// is snapping enabled and original mousewheel
@@ -84,7 +84,7 @@ $(function() {
 
 	// actions need to be done on window resize
 	$window.resize(function(){
-		setLayouts();
+		setLayouts()
 		checkIscrolls();
 	});
 
@@ -118,7 +118,7 @@ $(function() {
 
 	// actions need to be done on page load
 	window.onLoad = function() {
-		setLayouts();
+		setLayouts()
 		checkIscrolls();
 	};
 
@@ -195,7 +195,7 @@ $(function() {
 	function setLayouts() {
 
 		// update variables
-		windowHeight = $window.height();
+		windowHeight = $window.height(),
 		windowWidth = $window.width();
 	}
 
@@ -260,8 +260,8 @@ $(function() {
 					down: 40
 				},
 				click: (('ontouchstart' in window)
-					(navigator.MaxTouchPoints > 0)
-					(navigator.msMaxTouchPoints > 0)) && 
+					|| (navigator.MaxTouchPoints > 0)
+					|| (navigator.msMaxTouchPoints > 0)) && 
 					!(/iPad|iPhone|iPod/.test(navigator.userAgent) && 
 					!window.MSStream),
 				mouseWheel: true,
